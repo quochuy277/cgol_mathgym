@@ -8,19 +8,21 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
- <div class="main-box">
-     <div class="score-time-box">
-         <div class="score-box" id="score-box">
-            <h2>Điểm: 0 </h2>
-         </div>
-         <div id="time-box">
-            <!-- <h2>Thời gian: 30</h2> -->
-         </div>
-     </div>
-     <div class="question-box" id="">
-         <h2 id="qsn"></h2>
-         <h2 id="ans"></h2>
+<div class="main-box">
+    <div class="display-box">
+        <div class="score-time-box">
+            <div class="score-box" id="score-box">
+                <h2>Điểm: 0 </h2>
+            </div>
+            <div id="time-box">
+                <!-- <h2>Thời gian: 30</h2> -->
+            </div>
+        </div>
 
+        <div class="question-box" id="">
+            <h2 id="qsn"></h2>
+            <!-- <h2 id="ans"></h2> -->
+        </div>
 
      </div>
      <div class="answer-box">
@@ -44,8 +46,11 @@
     <script src="CountDown.js"></script>
     <!-- <script src="checkAnswer.js"></script> -->
     <script>
-        let score = 0;
+        var score = 0;
         var gameOver=false;
+        document.getElementById("option1").style.background = "#223575";
+        document.getElementById("option2").style.background = "#223575";
+        document.getElementById("option3").style.background = "#223575";
         // var dontCount=true;
         let Mthgame = new Mathgame();
         Mthgame.question();
@@ -61,6 +66,7 @@
             document.getElementById("emoji-show").innerHTML = "✔️";
             score += 4;
             timer += 3;
+            Mthgame.correctAnswer.style.background = "green";
             } 
         else {
             document.getElementById("emoji-show").innerHTML = "❌";
@@ -69,6 +75,9 @@
         }
        if (timer > 0) {
             setTimeout(function () {
+            document.getElementById("option1").style.background = "#223575";
+            document.getElementById("option2").style.background = "#223575";
+            document.getElementById("option3").style.background = "#223575";
             Mthgame = new Mathgame();
             Mthgame.question();
             Mthgame.getCorrectAnswer();
@@ -79,6 +88,8 @@
             document.getElementById("play-again").style.display = "block";
             gameOver=true;
                 }
+
+        Mthgame.correctAnswer.style.background = "green";
         document.getElementById("score-box").innerHTML="<h2>Điểm: " + score + "</h2>";
         }
 

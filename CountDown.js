@@ -21,7 +21,7 @@ let downloadTimer = setInterval(function () {
   } else {
     document.getElementById("lost-msg").innerHTML = "Hết giờ";
     document.getElementById("xtra-msg").innerHTML =
-      "Hãy thử lại nào.<br>Số điểm của bạn là ";
+      "Hãy thử lại nào.<br>Số điểm của bạn là " + score;
     document.getElementById("play-again").style.display = "block";
     clearInterval(downloadTimer);
   }
