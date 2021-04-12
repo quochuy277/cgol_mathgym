@@ -65,33 +65,12 @@ class Mathgame {
       this.makeOption(-1, 1, 0);
       this.correctAnswer = document.getElementById("option3");
     }
-    return this.correctAnswer;
+    // return this.correctAnswer;
   }
-  checkAnswer(answer) {
-      if (timer > 0) {
-        var that=this;
-      setTimeout(function () {
-        
-        that.question();
-        that.getCorrectAnswer();
-      }, 500);
-    } else {
-      document.getElementById("lost-msg").innerHTML = "Hết giờ";
-      document.getElementById("xtra-msg").innerHTML =
-        "Hãy thử lại nào.<br>Số điểm của bạn là " + score;
-      document.getElementById("play-again-links").style.display = "block";
-    }
+  getAnswer(){
+    return this.ans;
+  }
 
-    if (!gameOver) {
-      if (answer === this.correctAnswer) {
-        document.getElementById("emoji-show").innerHTML = "✔️";
-        this.trueAns=true;
-      } else {
-        document.getElementById("emoji-show").innerHTML = "❌";
-        this.trueAns=false;
-      }
-    }
-  }
 }
 
 

@@ -24,9 +24,9 @@
 
      </div>
      <div class="answer-box">
-        <button type="submit" class="options" id="option1" onclick="Mthgame.checkAnswer(document.getElementById('option1'))"></button>
-        <button type="submit" class="options" id="option2" onclick="Mthgame.checkAnswer(document.getElementById('option2'))"></button>
-        <button type="submit" class="options" id="option3" onclick="Mthgame.checkAnswer(document.getElementById('option3'))"></button>
+        <button type="submit" class="options" id="option1" onclick="checkAnswer(document.getElementById('option1'))"></button>
+        <button type="submit" class="options" id="option2" onclick="checkAnswer(document.getElementById('option2'))"></button>
+        <button type="submit" class="options" id="option3" onclick="checkAnswer(document.getElementById('option3'))"></button>
      </div>
      <div class="show-wrong-right">
         <h2 id="emoji-show"></h2>
@@ -50,9 +50,45 @@
         let Mthgame = new Mathgame();
         Mthgame.question();
         Mthgame.getCorrectAnswer();
+        // console.log(Mthgame.correctAnswer);
         countDown();
-        console.log(score);
+        var anss = null;
+        function checkAnswer(answer)
+  {     
+        console.log(Mthgame.correctAnswer);
+        // let rightAnswer = Mthgame.correctAnswer;
+        if (!gameOver)
+        {
+        if (answer === Mthgame.correctAnswer) {
+        document.getElementById("emoji-show").innerHTML = "✔️";
+        Mthgame.trueAns=true;
+            } 
+        else {
+            document.getElementById("emoji-show").innerHTML = "❌";
+            Mthgame.trueAns=false;
+            }
+        }
+
+       if (timer > 0) {
+
+        setTimeout(function () {
+        let Mthgame1 = new Mathgame();
+        Mthgame1.question();
+        Mthgame1.getCorrectAnswer();
+       anss= Mthgame1.getAnswer();
         
+        }, 500);
+        } else {
+        document.getElementById("lost-msg").innerHTML = "Hết giờ";
+        document.getElementById("xtra-msg").innerHTML =
+        "Hãy thử lại nào.<br>Số điểm của bạn là " + score;
+        document.getElementById("play-again-links").style.display = "block";
+    }
+    console.log(anss);
+    
+}
+
+
 
     
     document.getElementById("score-box").innerHTML = "<h2>Điểm: " + score + "</h2>";
