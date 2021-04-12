@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathGym Play</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+ <div class="main-box">
+     <div class="score-time-box">
+         <div class="score-box" id="score-box">
+            <h2>Điểm: 0 </h2>
+         </div>
+         <div id="time-box">
+            <!-- <h2>Thời gian: 30</h2> -->
+         </div>
+     </div>
+     <div class="question-box" id="">
+         <h2 id="qsn"></h2>
+         <h2 id="ans"></h2>
+
+
+     </div>
+     <div class="answer-box">
+        <button type="submit" class="options" id="option1" onclick="Mthgame.checkAnswer(document.getElementById('option1'))"></button>
+        <button type="submit" class="options" id="option2" onclick="Mthgame.checkAnswer(document.getElementById('option2'))"></button>
+        <button type="submit" class="options" id="option3" onclick="Mthgame.checkAnswer(document.getElementById('option3'))"></button>
+     </div>
+     <div class="show-wrong-right">
+        <h2 id="emoji-show"></h2>
+    </div>
+ 
+     <div class="message-box">
+         <h1 id="lost-msg"></h1>
+         <p id="xtra-msg"></p>
+     </div>
+ </div>
+ <div class="play-again-links">
+     <button id="play-again"><a href="game.html"></a>Chơi lại</button>
+ </div>
+    <script src="Mathgame.js"></script>
+    <script src="CountDown.js"></script>
+    <!-- <script src="checkAnswer.js"></script> -->
+    <script>
+        var score = 0;
+        var gameOver=false;
+        var dontCount=true;
+        let Mthgame = new Mathgame();
+        Mthgame.question();
+        Mthgame.getCorrectAnswer();
+        countDown();
+        console.log(score);
+        
+
+    
+    document.getElementById("score-box").innerHTML = "<h2>Điểm: " + score + "</h2>";
+  
+    </script>
+</body>
+</html>

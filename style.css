@@ -1,0 +1,15 @@
+h1 {
+    color: crimson;
+    font-size: 100px;
+    font-weight: 100;
+    font-style: oblique;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+img {
+    border-radius: 20%;
+}
+.intro {
+    text-align: center;
+    font-size: 25px;
+}
