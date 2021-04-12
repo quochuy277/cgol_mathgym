@@ -9,7 +9,7 @@ class Mathgame {
     this.x = null;
     this.x_ans = null;
     this.correctAnswer = null;
-    this.trueAns=false;
+    // this.trueAns=false;
   }
   randomNumber(x) {
     return Math.floor(Math.random() * x + 1);
@@ -66,9 +66,6 @@ class Mathgame {
       this.correctAnswer = document.getElementById("option3");
     }
     // return this.correctAnswer;
-  }
-  getAnswer(){
-    return this.ans;
   }
 
 }

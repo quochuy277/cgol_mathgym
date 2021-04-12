@@ -22,7 +22,7 @@ let downloadTimer = setInterval(function () {
     document.getElementById("lost-msg").innerHTML = "Hết giờ";
     document.getElementById("xtra-msg").innerHTML =
       "Hãy thử lại nào.<br>Số điểm của bạn là ";
-    // document.getElementById("play-again-links").style.display = "block";
+    document.getElementById("play-again").style.display = "block";
     clearInterval(downloadTimer);
   }
 }, 1000);

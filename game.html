@@ -37,62 +37,51 @@
          <p id="xtra-msg"></p>
      </div>
  </div>
- <div class="play-again-links">
-     <button id="play-again"><a href="game.html"></a>Chơi lại</button>
+ <div class="links" id="play-again">
+     <a href="game.html">Chơi lại</a>
  </div>
     <script src="Mathgame.js"></script>
     <script src="CountDown.js"></script>
     <!-- <script src="checkAnswer.js"></script> -->
     <script>
-        var score = 0;
+        let score = 0;
         var gameOver=false;
-        var dontCount=true;
+        // var dontCount=true;
         let Mthgame = new Mathgame();
         Mthgame.question();
         Mthgame.getCorrectAnswer();
-        // console.log(Mthgame.correctAnswer);
+        
         countDown();
         var anss = null;
+        var Mthgame1=null;
         function checkAnswer(answer)
-  {     
-        console.log(Mthgame.correctAnswer);
-        // let rightAnswer = Mthgame.correctAnswer;
-        if (!gameOver)
-        {
+        {  
+        if (!gameOver){
         if (answer === Mthgame.correctAnswer) {
-        document.getElementById("emoji-show").innerHTML = "✔️";
-        Mthgame.trueAns=true;
+            document.getElementById("emoji-show").innerHTML = "✔️";
+            score += 4;
+            timer += 3;
             } 
         else {
             document.getElementById("emoji-show").innerHTML = "❌";
-            Mthgame.trueAns=false;
+            score -= 3;
             }
         }
-
        if (timer > 0) {
-
-        setTimeout(function () {
-        let Mthgame1 = new Mathgame();
-        Mthgame1.question();
-        Mthgame1.getCorrectAnswer();
-       anss= Mthgame1.getAnswer();
-        
-        }, 500);
+            setTimeout(function () {
+            Mthgame = new Mathgame();
+            Mthgame.question();
+            Mthgame.getCorrectAnswer();
+            }, 500);
         } else {
-        document.getElementById("lost-msg").innerHTML = "Hết giờ";
-        document.getElementById("xtra-msg").innerHTML =
-        "Hãy thử lại nào.<br>Số điểm của bạn là " + score;
-        document.getElementById("play-again-links").style.display = "block";
-    }
-    console.log(anss);
-    
-}
+            document.getElementById("lost-msg").innerHTML = "Hết giờ";
+            document.getElementById("xtra-msg").innerHTML = "Hãy thử lại nào.<br>Số điểm của bạn là " + score;
+            document.getElementById("play-again").style.display = "block";
+            gameOver=true;
+                }
+        document.getElementById("score-box").innerHTML="<h2>Điểm: " + score + "</h2>";
+        }
 
-
-
-    
-    document.getElementById("score-box").innerHTML = "<h2>Điểm: " + score + "</h2>";
-  
     </script>
 </body>
 </html>
