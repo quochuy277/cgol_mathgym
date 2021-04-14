@@ -3,7 +3,7 @@ header h1{
     color: white;
     padding: 5px;
     text-align: center;
-    font-size: 45px;
+    font-size: 65px;
 }
 /* img {
     border-radius: 20%;
@@ -16,7 +16,7 @@ header h1{
     margin: 10px 15px;
     padding: 10px;
     color: #1c1c1c;
-    font-size: 18px;
+    font-size: 28px;
 }
 .links{
     text-align: center;
@@ -39,7 +39,7 @@ header h1{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Itim', cursive;
+    font-family: 'Times', cursive;
 }
 .display-box{
     display: block;
@@ -75,14 +75,14 @@ header h1{
     width: 25%;
     margin: 10px 5px;
     padding: 5px;
-    background: #512275;
+    background: #223575;
     color: #e7f1f3;
     border-radius: 15px;
     font-weight: 900;
     display: inline-block;
     outline: none;
     border: 2px solid #323232;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
 }
 

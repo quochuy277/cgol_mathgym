@@ -1,5 +1,6 @@
 var timer = 30;
 function countDown(){
+
 let downloadTimer = setInterval(function () {
   // timer--;
   // document.getElementById("time-box").innerHTML =

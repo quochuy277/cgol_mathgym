@@ -61,17 +61,21 @@
         var Mthgame1=null;
         function checkAnswer(answer)
         {  
-        if (!gameOver){
+        if (gameOver==false){
         if (answer === Mthgame.correctAnswer) {
             document.getElementById("emoji-show").innerHTML = "✔️";
-            score += 4;
-            timer += 3;
+            score = score +4;
+            timer = timer +3;
             Mthgame.correctAnswer.style.background = "green";
             } 
         else {
             document.getElementById("emoji-show").innerHTML = "❌";
-            score -= 3;
+            if(score<3)
+                {score = 0;}
+                else
+                score = score - 3;
             }
+
         }
        if (timer > 0) {
             setTimeout(function () {
@@ -88,7 +92,7 @@
             document.getElementById("play-again").style.display = "block";
             gameOver=true;
                 }
-
+                console.log(score);
         Mthgame.correctAnswer.style.background = "green";
         document.getElementById("score-box").innerHTML="<h2>Điểm: " + score + "</h2>";
         }
