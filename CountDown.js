@@ -25,6 +25,7 @@ let downloadTimer = setInterval(function () {
       "Hãy thử lại nào.<br>Số điểm của bạn là " + score;
     document.getElementById("play-again").style.display = "block";
     clearInterval(downloadTimer);
+    gameOver=true;
   }
 }, 1000);
 }
